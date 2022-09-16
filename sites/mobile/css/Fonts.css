@@ -1,0 +1,20 @@
+@font-face {
+	font-family: lobster;
+	src:  url('/css/fonts/Lobster-Regular.ttf');
+}
+@font-face {
+	font-family: courgette;
+	src: url('/css/fonts/Courgette-Regular.ttf');
+}
+@font-face {
+	font-family: cookie;
+	src: url('/css/fonts/Cookie-Regular.ttf');
+}
+@font-face {
+	font-family: 'great vibes';
+	src: url('/css/fonts/GreatVibes-Regular.ttf');
+}
+@font-face {
+	font-family: bree;
+	src: url('/css/fonts/BreeSerif-Regular.ttf');
+}

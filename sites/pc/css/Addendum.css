@@ -1,0 +1,849 @@
+* {
+    font-size: min(32px, max(16px, calc(16px + calc(calc(calc(100vw - 1500px)/1000)*16))));
+}
+body {
+    min-width: 1000px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: courgette, 'Times New Roman', helvetica, fantasy;
+    color: #5C2105;
+}
+div {
+    display: block;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: lobster, 'Times New Roman', helvetica, fantasy;
+}
+h1 {
+    font-size: min(64px, max(32px, calc(32px + calc(calc(calc(100vw - 1500px)/1000)*32))));
+}
+h2 {
+    font-size: min(48px, max(24px, calc(24px + calc(calc(calc(100vw - 1500px)/1000)*24))));
+}
+h3 {
+    font-size: min(37.44px, max(18.72px, calc(18.72px + calc(calc(calc(100vw - 1500px)/1000)*18.72))));
+}
+h4 {
+    font-size: min(32px, max(16px, calc(16px + calc(calc(calc(100vw - 1500px)/1000)*16))));
+}
+h5 {
+    font-size: min(26.56px, max(13.28px, calc(13.28px + calc(calc(calc(100vw - 1500px)/1000)*13.28))));
+}
+h6 {
+    font-size: min(24px, max(12px, calc(12px + calc(calc(calc(100vw - 1500px)/1000)*12))));
+}
+section.DC1 h1, section.DC1 h2, section.DC1 h3, section.DC1 h4, section.DC1 h5, section.DC1 h6, 
+section.DC2 h1, section.DC2 h2, section.DC2 h3, section.DC2 h4, section.DC2 h5, section.DC2 h6, 
+section.DC3 h1, section.DC3 h2, section.DC3 h3, section.DC3 h4, section.DC3 h5, section.DC3 h6 {
+    color: #f8efd2;
+} 
+section.DC1 a:hover > h1, section.DC1 a:hover > h2, section.DC1 a:hover > h3, section.DC1 a:hover > h4, section.DC1 a:hover > h5, section.DC1 a:hover > h6, 
+section.DC2 a:hover > h1, section.DC2 a:hover > h2, section.DC2 a:hover > h3, section.DC2 a:hover > h4, section.DC2 a:hover > h5, section.DC2 a:hover > h6, 
+section.DC3 a:hover > h1, section.DC3 a:hover > h2, section.DC3 a:hover > h3, section.DC3 a:hover > h4, section.DC3 a:hover > h5, section.DC3 a:hover > h6, 
+section.DC1 a:active > h1, section.DC1 a:active > h2, section.DC1 a:active > h3, section.DC1 a:active > h4, section.DC1 a:active > h5, section.DC1 a:active > h6, 
+section.DC2 a:active > h1, section.DC2 a:active > h2, section.DC2 a:active > h3, section.DC2 a:active > h4, section.DC2 a:active > h5, section.DC2 a:active > h6, 
+section.DC3 a:active > h1, section.DC3 a:active > h2, section.DC3 a:active > h3, section.DC3 a:active > h4, section.DC3 a:active > h5, section.DC3 a:active > h6 {
+    color: #FFD700;
+}
+* .numeric {
+    font-family: bree;
+}
+section {
+    background-color: rgba(245, 245, 245, 8.0);
+    margin: min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10)))) 0px;
+    padding: min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+    border-radius: min(40px, max(20px, calc(20px + calc(calc(calc(100vw - 1500px)/1000)*20))));
+    max-width: 100%;
+    overflow: hidden;
+}
+article {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    max-width:  100%;
+    max-height: calc(0.8*100vh);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+article.Long {
+
+    max-height: none;
+}
+hr {
+    margin: 0px min(100px, max(50px, calc(50px + calc(calc(calc(100vw - 1500px)/1000)*50))));
+    border: min(4px, max(2px, calc(2px + calc(calc(calc(100vw - 1500px)/1000)*2)))) solid #5C2105;
+    border-radius: min(10px, max(5px, calc(5px + calc(calc(calc(100vw - 1500px)/1000)*5))));
+    background-color: #5C2105;
+}
+section.popup {
+    position: fixed;
+    margin: auto;
+    z-index: 11;
+}
+article.popup {
+    width: auto;
+}
+iframe.standard {
+    width: 100%;
+    height: 75vh;
+    border: 0;
+}
+iframe.view {
+    width: 125%;
+    height: 75vh;
+    border: 0;
+    transform-origin: 0px 0px 0px;
+    transform: scaleX(0.8);
+}
+div.relative, span.relative {
+    position: relative;
+}
+div.block, span.block {
+    display: inline-block;
+}
+div.flex {
+    display: inline-flex;
+}
+div.fraction {
+    width: fit-content;
+    margin: 0 auto;
+    display: inline-block;
+}
+div.vr25, span.vr25 {
+    width: min(50px, max(25px, calc(25px + calc(calc(calc(100vw - 1500px)/1000)*25))));
+}
+div.vr50, span.vr50 {
+    width: min(100px, max(50px, calc(50px + calc(calc(calc(100vw - 1500px)/1000)*50))));
+}
+div.vr100, span.vr100 {
+    width: min(200px, max(100px, calc(100px + calc(calc(calc(100vw - 1500px)/1000)*100))));
+}
+div.vr250, span.vr250 {
+    width: min(500px, max(250px, calc(250px + calc(calc(calc(100vw - 1500px)/1000)*250))));
+}
+div.Loading-Notification {
+    text-align: left;
+    padding-inline-start: 43%;
+    padding-bottom: min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+div.popup-background {
+    position: fixed;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+div.status {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: none;
+    box-shadow: none;
+}
+div.status > div {
+    border-radius: min(10px, max(5px, calc(5px + calc(calc(calc(100vw - 1500px)/1000)*5))));
+}
+span.title {
+    width: 100%;
+    margin-top: min(40px, max(20px, calc(20px + calc(calc(calc(100vw - 1500px)/1000)*20))));
+    margin-bottom: min(40px, max(20px, calc(20px + calc(calc(calc(100vw - 1500px)/1000)*20))));
+    text-align: center;
+    display: inline-flex;
+}
+span.SaveTheEth {
+    display: inline-block;
+}
+span.CHOCTXN {
+    display: inline-block;
+    vertical-align: top;
+}
+span.formula {
+    display: inline-block;
+    vertical-align: top;
+}
+span.grid {
+    display: inline-grid;
+}
+span.vertical-spacer {
+    height:  100%;
+    width: min(40px, max(20px, calc(20px + calc(calc(calc(100vw - 1500px)/1000)*20))));
+}
+span.Title {
+    width: 100%;
+}
+span.Units {
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+img.Title {
+    width: min(2000px, max(1000px, calc(1000px + calc(100vw - 1500px))));
+}
+img.Main-Nav {
+    width: min(310px, max(160px, calc(150px + calc(calc(calc(100vw - 1500px)/1000)*150))));
+    height: min(110px, max(60px, calc(50px + calc(calc(calc(100vw - 1500px)/1000)*50))));
+}
+img.SaveTheEth {
+    width: min(1000px, max(500px, calc(500px + calc(calc(calc(100vw - 1500px)/1000)*500))));
+    vertical-align: bottom;
+}
+img.CHOCTXN {
+    width: min(1000px, max(500px, calc(500px + calc(calc(calc(100vw - 1500px)/1000)*500))));
+    vertical-align: top;
+}
+img.CHOCImpact, img.CCGrowthExample, img.PriceFormula {
+    width: min(1500px, max(750px, calc(750px + calc(calc(calc(100vw - 1500px)/1000)*750))));
+    vertical-align: top;
+}
+img.full {
+    width: min(1900px, max(950px, calc(950px + calc(calc(calc(100vw - 1500px)/1000)*950))));
+    vertical-align: top;
+}
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: #D2691E;
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+}
+a:active {
+    cursor: wait;
+    animation: whoopie 0.1s linear 1;
+}
+p.left, div.left, span.left, td.left, form.left {
+    text-align: left !important;
+}
+p.center, div.center, span.center, td.center, form.center {
+    text-align: center !important;
+}
+p.right, div.right, span.right, td.right, form.right {
+    text-align: right !important;
+}
+p.justify, div.justify, span.justify, td.justify, form.justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+p.mw-10 {
+    margin: 0px min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+p.Loading {
+    display: inline-block;
+    vertical-align: top;
+}
+p.Loading::after {
+    content: "...";
+    animation: think 4s linear infinite;
+}
+p.numerator {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #5C2105;
+}
+p.denominator {
+    margin: 0;
+    padding: 0;
+}
+p.green {
+    color: #25ba28;
+}
+p.red {
+    color: #F47174;
+}
+p.underline {
+    text-decoration: underline;
+}
+mark {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    animation: whoopie 1s linear infinite alternate;
+}
+input[type=number] {
+    appearance: textfield;
+}
+input[type="checkbox"].Wallet {
+    transform: scale(2);
+    accent-color: #0092ff;
+    cursor: pointer;
+}
+input.right, p.right, td.right {
+    text-align: right !important;
+}
+input.humble {
+    width: 100% !important;
+    font-size: inherit;
+}
+input.color {
+    width: 45px;
+    padding: 0;
+    display: inline-block;
+    vertical-align: sub;
+}
+input.w-125 {
+    width: min(150px, max(125px, calc(125px + calc(calc(calc(100vw - 1500px)/1000)*25)))) !important;
+}
+input.w-29-45, select.w-29-45 {
+    width: min(45px, max(29px, calc(29px + calc(calc(calc(100vw - 1500px)/1000)*16)))) !important;
+}
+input.h-29-45, select.h-29-45 {
+    height: min(45px, max(29px, calc(29px + calc(calc(calc(100vw - 1500px)/1000)*16)))) !important;
+}
+input.h-36-64, select.h-36-64 {
+    height: min(64px, max(36px, calc(36px + calc(calc(calc(100vw - 1500px)/1000)*28)))) !important;
+}
+input.m-w-125 {
+    min-width: min(140px, max(125px, calc(125px + calc(calc(calc(100vw - 1500px)/1000)*15))));
+}
+input.w-w-90 {
+    max-width: min(180px, max(90px, calc(90px + calc(calc(calc(100vw - 1500px)/1000)*90))));
+}
+input.w-w-150 {
+    max-width: min(300px, max(150px, calc(150px + calc(calc(calc(100vw - 1500px)/1000)*150))));
+}
+ul {
+    list-style: none;
+}
+ul.bullet {
+    list-style: disc;
+}
+li.coin::before {
+    display: inline-block;
+    width: min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+    height: min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+    background-image: url('/images/ChocolateCoin.png');
+}
+li {
+    text-align: justify;
+    text-justify: inter-word;
+}
+table {
+    border: none;
+}
+table.w-wall, thead.w-wall, tbody.w-wall {
+    margin-inline: auto;
+    border-left: min(6px, max(3px, calc(3px + calc(calc(calc(100vw - 1500px)/1000)*3)))) solid #5C2105;
+    border-right: min(6px, max(3px, calc(3px + calc(calc(calc(100vw - 1500px)/1000)*3)))) solid #5C2105;
+    border-radius: min(10px, max(5px, calc(5px + calc(calc(calc(100vw - 1500px)/1000)*5))));
+}
+table.s-w-wall, thead.s-w-wall, tbody.s-w-wall {
+    margin-inline: auto;
+    border-left: 1px solid #5C2105;
+    border-right: 1px solid #5C2105;
+}
+thead.sticky {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+tr, th, td {
+    height: min(60px, max(30px, calc(30px + calc(calc(calc(100vw - 1500px)/1000)*30))));
+    text-align: center;
+}
+th > a > h1, th > a > h2, th > a > h3, th > a > h4, th > a > h5, th > a > h6 {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #5C2105;
+    color: #f8efd2;
+}
+th > a:hover > h1, th > a:hover > h2, th > a:hover > h3, th > a:hover > h4, th > a:hover > h5, th > a:hover > h6, 
+th > a:active > h1, th > a:active > h2, th > a:active > h3, th > a:active > h4, th > a:active > h5, th > a:active > h6 {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #5C2105;
+    color: #FFD700;
+}
+tr.tall, th.tall, td.tall {
+    height: min(90px, max(45px, calc(45px + calc(calc(calc(100vw - 1500px)/1000)*45))));
+}
+th.bottom {
+    vertical-align: bottom;
+}
+td.single {
+    font-size: min(32px, max(16px, calc(16px + calc(calc(calc(100vw - 1500px)/1000)*16))));
+}
+th.single, td.single {
+    width: min(228px, max(114px, calc(114px + calc(calc(calc(100vw - 1500px)/1000)*114))));
+    text-align: center;
+    vertical-align: middle;
+}
+th.double, td.double {
+    width: min(456px, max(228px, calc(228px + calc(calc(calc(100vw - 1500px)/1000)*228))));
+    text-align: center;
+    vertical-align: middle;
+}
+th.quadruple {
+    width: min(912px, max(456px, calc(456px + calc(calc(calc(100vw - 1500px)/1000)*456))));
+    text-align: center;
+    vertical-align: middle;
+}
+th.sticky, td.sticky {
+    position: sticky;
+    left: 0px;
+    z-index: 1;
+}
+th.pw-2, td.pw-2 {
+    padding: 0px min(4px, max(2px, calc(2px + calc(calc(calc(100vw - 1500px)/1000)*2))));
+}
+th.pw-10, td.pw-10 {
+    padding: 0px min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+th.pw-15, td.pw-15 {
+    padding: 0px min(30px, max(15px, calc(15px + calc(calc(calc(100vw - 1500px)/1000)*15))));
+}
+th.pw-25, td.pw-25 {
+    padding: 0px min(50px, max(25px, calc(25px + calc(calc(calc(100vw - 1500px)/1000)*25))));
+}
+nav {
+    width: 100%;
+    display: inline-flex!important;
+    padding-inline: min(160px, max(80px, calc(80px + calc(calc(calc(100vw - 1500px)/1000)*80))));
+}
+footer, #CandyLand {
+    width: 100vw;
+    min-height: 500px;
+    margin: 0px;
+    padding: 0px;
+    object-fit: cover;
+}
+nav > span {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+}
+input, select {
+    height: min(45px, max(29px, calc(29px + calc(calc(calc(100vw - 1500px)/1000)*16)))) !important;
+    color: inherit !important;
+}
+input.flex {
+    width:  auto;
+    display: inline-flex;
+}
+button.gold, button.gold:hover, button.gold:focus, button.gold:active {
+    background-color: #FFD700!important;
+    border-color: #FFD700!important;
+}
+button.minimize, button.minimize:hover, button.minimize:focus, button.minimize:active {
+    height: min(90px, max(45px, calc(45px + calc(calc(calc(100vw - 1500px)/1000)*45))));
+    background-color: #FFD700!important;
+    border-color: #FFD700!important;
+    color: rgb(245, 245, 245);
+    font-size: min(70px, max(35px, calc(35px + calc(calc(calc(100vw - 1500px)/1000)*35))));
+    padding: 0 min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10)))) 0 min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+button.exit, button.exit:hover, button.exit:focus, button.exit:active {
+    height: min(90px, max(45px, calc(45px + calc(calc(calc(100vw - 1500px)/1000)*45))));
+    background-color: #F47174!important;
+    border-color: #F47174!important;
+    color: rgb(245, 245, 245);
+    font-size: min(70px, max(35px, calc(35px + calc(calc(calc(100vw - 1500px)/1000)*35))));
+    padding: 0 min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10)))) 0 min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+button.add, button.add:hover, button.add:focus, button.add:active {
+    height: min(90px, max(45px, calc(45px + calc(calc(calc(100vw - 1500px)/1000)*45))));
+    color: rgb(245, 245, 245);
+    font-size: min(70px, max(35px, calc(35px + calc(calc(calc(100vw - 1500px)/1000)*35))));
+    padding: 0 min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10)))) 0 min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+button.regular, button.regular:hover, button.regular:focus, button.regular:active {
+    height: min(50px, max(25px, calc(25px + calc(calc(calc(100vw - 1500px)/1000)*25))));
+    color: rgb(245, 245, 245);
+}
+button.big, button.big:hover, button.big:focus, button.big:active {
+    margin-top: min(12px, max(4px, calc(4px + calc(calc(calc(100vw - 1500px)/1000)*8))));
+    width: min(100px, max(60px, calc(60px + calc(calc(calc(100vw - 1500px)/1000)*40))));
+    height: min(100px, max(60px, calc(60px + calc(calc(calc(100vw - 1500px)/1000)*40))));
+    vertical-align: text-bottom;
+    color: rgb(245, 245, 245);
+    font-size: min(70px, max(35px, calc(35px + calc(calc(calc(100vw - 1500px)/1000)*35))));
+}
+button.humble {
+    font-size: min(26px, max(13px, calc(13px + calc(calc(calc(100vw - 1500px)/1000)*13))));
+}
+button.CancelOrder {
+    transform: scale(0.8);
+}
+canvas.chart {
+    width:  100%;
+    height: 100%;
+}
+canvas.interface {
+    position: absolute;
+    z-index: 1;
+}
+img.Loading {
+    width: min(60px, max(30px, calc(30px + calc(calc(calc(100vw - 1500px)/1000)*30))));
+    display: inline-block;
+    vertical-align: top;
+    animation: rotate 5s Linear infinite;
+}
+img.Big {
+    width: min(125px, max(75px, calc(75px + calc(calc(calc(100vw - 1500px)/1000)*50))));
+    display: inline-block;
+    vertical-align: top;
+    animation: rotate 10s Linear infinite;
+}
+img.cc {
+    position: absolute;
+    top: -350px;
+    border-radius: 50%;
+}
+img.cc30 {
+    width: min(60px, max(30px, calc(30px + calc(calc(calc(100vw - 1500px)/1000)*30))));
+}
+img.cc40 {
+    width: min(80px, max(40px, calc(40px + calc(calc(calc(100vw - 1500px)/1000)*40))));
+}
+img.cc45 {
+    width: min(90px, max(45px, calc(45px + calc(calc(calc(100vw - 1500px)/1000)*45))));
+}
+img.cc50 {
+    width: min(100px, max(50px, calc(50px + calc(calc(calc(100vw - 1500px)/1000)*50))));
+}
+img.cc100 {
+    width: min(200px, max(100px, calc(100px + calc(calc(calc(100vw - 1500px)/1000)*100))));
+}
+img.s30 { height: min(45px, max(30px, calc(30px + calc(calc(calc(100vw - 1500px)/1000)*15)))); z-index: -10; }
+img.s60 { height: min(90px, max(60px, calc(60px + calc(calc(calc(100vw - 1500px)/1000)*30)))); z-index: -9; }
+img.s90 { height: min(135px, max(90px, calc(90px + calc(calc(calc(100vw - 1500px)/1000)*45)))); z-index: -8; }
+img.s120 { height: min(180px, max(120px, calc(120px + calc(calc(calc(100vw - 1500px)/1000)*60)))); z-index: -7; }
+img.s150 { height: min(225px, max(150px, calc(150px + calc(calc(calc(100vw - 1500px)/1000)*75)))); z-index: -6; }
+img.s180 { height: min(270px, max(180px, calc(180px + calc(calc(calc(100vw - 1500px)/1000)*90)))); z-index: -5; }
+img.s210 { height: min(315px, max(210px, calc(210px + calc(calc(calc(100vw - 1500px)/1000)*105)))); z-index: -4; }
+img.s240 { height: min(360px, max(240px, calc(240px + calc(calc(calc(100vw - 1500px)/1000)*120)))); z-index: -3; }
+img.s270 { height: min(405px, max(270px, calc(270px + calc(calc(calc(100vw - 1500px)/1000)*135)))); z-index: -2; }
+img.s300 { height: min(450px, max(300px, calc(300px + calc(calc(calc(100vw - 1500px)/1000)*150)))); z-index: -1; }
+img.pennies-from-heaven-10 { animation: fall 600s linear infinite, rotate 10s linear infinite; }
+img.pennies-from-heaven-11 { animation: fall 570s linear infinite, rotate 11s linear infinite; }
+img.pennies-from-heaven-12 { animation: fall 540s linear infinite, rotate 12s linear infinite; }
+img.pennies-from-heaven-13 { animation: fall 510s linear infinite, rotate 13s linear infinite; }
+img.pennies-from-heaven-14 { animation: fall 480s linear infinite, rotate 14s linear infinite; }
+img.pennies-from-heaven-15 { animation: fall 450s linear infinite, rotate 15s linear infinite; }
+img.pennies-from-heaven-16 { animation: fall 420s linear infinite, rotate 16s linear infinite; }
+img.pennies-from-heaven-17 { animation: fall 390s linear infinite, rotate 17s linear infinite; }
+img.pennies-from-heaven-18 { animation: fall 360s linear infinite, rotate 18s linear infinite; }
+img.pennies-from-heaven-19 { animation: fall 330s linear infinite, rotate 19s linear infinite; }
+img.pennies-from-heaven-20 { animation: fall 600s linear infinite, rotate 20s linear infinite; }
+img.pennies-from-heaven-21 { animation: fall 570s linear infinite, rotate 21s linear infinite; }
+img.pennies-from-heaven-22 { animation: fall 540s linear infinite, rotate 22s linear infinite; }
+img.pennies-from-heaven-23 { animation: fall 510s linear infinite, rotate 23s linear infinite; }
+img.pennies-from-heaven-24 { animation: fall 480s linear infinite, rotate 24s linear infinite; }
+img.pennies-from-heaven-25 { animation: fall 450s linear infinite, rotate 25s linear infinite; }
+img.pennies-from-heaven-26 { animation: fall 420s linear infinite, rotate 26s linear infinite; }
+img.pennies-from-heaven-27 { animation: fall 390s linear infinite, rotate 27s linear infinite; }
+img.pennies-from-heaven-28 { animation: fall 360s linear infinite, rotate 28s linear infinite; }
+img.pennies-from-heaven-29 { animation: fall 330s linear infinite, rotate 29s linear infinite; }
+img.pennies-from-heaven-30 { animation: fall 600s linear infinite, rotate 30s linear infinite; }
+img.pennies-from-heaven-reverse-10 { animation: fall 600s linear infinite, rotate 10s linear infinite reverse; }
+img.pennies-from-heaven-reverse-11 { animation: fall 570s linear infinite, rotate 11s linear infinite reverse; }
+img.pennies-from-heaven-reverse-12 { animation: fall 540s linear infinite, rotate 12s linear infinite reverse; }
+img.pennies-from-heaven-reverse-13 { animation: fall 510s linear infinite, rotate 13s linear infinite reverse; }
+img.pennies-from-heaven-reverse-14 { animation: fall 480s linear infinite, rotate 14s linear infinite reverse; }
+img.pennies-from-heaven-reverse-15 { animation: fall 450s linear infinite, rotate 15s linear infinite reverse; }
+img.pennies-from-heaven-reverse-16 { animation: fall 420s linear infinite, rotate 16s linear infinite reverse; }
+img.pennies-from-heaven-reverse-17 { animation: fall 390s linear infinite, rotate 17s linear infinite reverse; }
+img.pennies-from-heaven-reverse-18 { animation: fall 360s linear infinite, rotate 18s linear infinite reverse; }
+img.pennies-from-heaven-reverse-19 { animation: fall 330s linear infinite, rotate 19s linear infinite reverse; }
+img.pennies-from-heaven-reverse-20 { animation: fall 600s linear infinite, rotate 20s linear infinite reverse; }
+img.pennies-from-heaven-reverse-21 { animation: fall 570s linear infinite, rotate 21s linear infinite reverse; }
+img.pennies-from-heaven-reverse-22 { animation: fall 540s linear infinite, rotate 22s linear infinite reverse; }
+img.pennies-from-heaven-reverse-23 { animation: fall 510s linear infinite, rotate 23s linear infinite reverse; }
+img.pennies-from-heaven-reverse-24 { animation: fall 480s linear infinite, rotate 24s linear infinite reverse; }
+img.pennies-from-heaven-reverse-25 { animation: fall 450s linear infinite, rotate 25s linear infinite reverse; }
+img.pennies-from-heaven-reverse-26 { animation: fall 420s linear infinite, rotate 26s linear infinite reverse; }
+img.pennies-from-heaven-reverse-27 { animation: fall 390s linear infinite, rotate 27s linear infinite reverse; }
+img.pennies-from-heaven-reverse-28 { animation: fall 360s linear infinite, rotate 28s linear infinite reverse; }
+img.pennies-from-heaven-reverse-29 { animation: fall 330s linear infinite, rotate 29s linear infinite reverse; }
+img.pennies-from-heaven-reverse-30 { animation: fall 600s linear infinite, rotate 30s linear infinite reverse; }
+#Sky {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1000;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient 15s ease infinite;
+}
+#Background {
+    position: absolute;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+}
+#Shell {
+    width: min(2000px, max(1000px, calc(1000px + calc(100vw - 1500px))));
+}
+#content {
+    min-height: 100vh;
+}
+#Trade-Chocolate-Coins {
+    overflow: hidden;
+}
+#Chart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+#Chart-Interface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+#Valuation-Price {
+    position: sticky;
+    left: min(283px, max(152px, calc(152px + calc(calc(calc(100vw - 1500px)/1000)*131))));;
+    z-index: 1;
+}
+.clear {
+    background: none transparent;
+}
+.courgette {
+    font-family: 'courgette';
+}
+.f15, * .f15 {
+    font-size: min(30px, max(15px, calc(15px + calc(calc(calc(100vw - 1500px)/1000)*15))));
+}
+.f20, * .f20 {
+    font-size: min(40px, max(20px, calc(20px + calc(calc(calc(100vw - 1500px)/1000)*20))));
+}
+.f25, * .f25 {
+    font-size: min(50px, max(25px, calc(25px + calc(calc(calc(100vw - 1500px)/1000)*25))));
+}
+.f30, * .f30 {
+    font-size: min(60px, max(30px, calc(30px + calc(calc(calc(100vw - 1500px)/1000)*30))));
+}
+.z-1 {
+    z-index: 1;
+}
+.float-right {
+    float: right;
+    margin: 0px min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10)))) min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10)))) 0px;
+}
+.float-left {
+    float: left;
+    margin: 0px 0px min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10)))) min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+.va-top {
+    vertical-align: top;
+}
+.va-super {
+    vertical-align: super;
+}
+.va-sub {
+    vertical-align: sub;
+}
+.pl-2 {
+    padding-left: min(4px, max(2px, calc(2px + calc(calc(calc(100vw - 1500px)/1000)*2))));
+}
+.pl-11 {
+    padding-left: min(22px, max(11px, calc(11px + calc(calc(calc(100vw - 1500px)/1000)*11))));
+}
+.pl-11_5 {
+    padding-left: min(23px, max(11.5px, calc(11.5px + calc(calc(calc(100vw - 1500px)/1000)*11.5))));
+}
+.pl-12 {
+    padding-left: min(24px, max(12px, calc(12px + calc(calc(calc(100vw - 1500px)/1000)*12))));
+}
+.pl-12_5 {
+    padding-left: min(25px, max(12.5px, calc(12.5px + calc(calc(calc(100vw - 1500px)/1000)*12.5))));
+}
+.pl-13 {
+    padding-left: min(26px, max(13px, calc(13px + calc(calc(calc(100vw - 1500px)/1000)*13))));
+}
+.pl-15_5 {
+    padding-left: min(31px, max(15.5px, calc(15.5px + calc(calc(calc(100vw - 1500px)/1000)*15.5))));
+}
+.pl-17_5 {
+    padding-left: min(35px, max(17.5px, calc(17.5px + calc(calc(calc(100vw - 1500px)/1000)*17.5))));
+}
+.pl-18 {
+    padding-left: min(36px, max(18px, calc(18px + calc(calc(calc(100vw - 1500px)/1000)*18))));
+}
+.pl-24 {
+    padding-left: min(48px, max(24px, calc(24px + calc(calc(calc(100vw - 1500px)/1000)*24))));
+}
+.pl-25 {
+    padding-left: min(50px, max(25px, calc(25px + calc(calc(calc(100vw - 1500px)/1000)*25))));
+}
+.pl-43 {
+    padding-left: min(86px, max(43px, calc(43px + calc(calc(calc(100vw - 1500px)/1000)*43))));
+}
+.pl-25_5 {
+    padding-left: min(51px, max(25.5px, calc(25.5px + calc(calc(calc(100vw - 1500px)/1000)*25.5))));
+}
+.pl-51_5 {
+    padding-left: min(103px, max(51.5px, calc(51.5px + calc(calc(calc(100vw - 1500px)/1000)*51.5))));
+}
+.pl-52 {
+    padding-left: min(104px, max(52px, calc(52px + calc(calc(calc(100vw - 1500px)/1000)*52))));
+}
+.pl-52_5 {
+    padding-left: min(105px, max(52.5px, calc(52.5px + calc(calc(calc(100vw - 1500px)/1000)*52.5))));
+}
+.pl-53_5 {
+    padding-left: min(107px, max(53.5px, calc(53.5px + calc(calc(calc(100vw - 1500px)/1000)*53.5))));
+}
+.pl-54 {
+    padding-left: min(108px, max(54px, calc(54px + calc(calc(calc(100vw - 1500px)/1000)*54))));
+}
+.pl-59_5 {
+    padding-left: min(119px, max(59.5px, calc(59.5px + calc(calc(calc(100vw - 1500px)/1000)*59.5))));
+}
+.pl-60 {
+    padding-left: min(120px, max(60px, calc(60px + calc(calc(calc(100vw - 1500px)/1000)*60))));
+}
+.pad-top25 {
+    padding-top: min(50px, max(25px, calc(25px + calc(calc(calc(100vw - 1500px)/1000)*25))));
+}
+.m-b10 {
+    margin-bottom: min(20px, max(10px, calc(10px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+.s-mw-10 {
+    margin: 0px 10px;
+}
+.mw-25 {
+    margin: 0px min(50px, max(25px, calc(25px + calc(calc(calc(100vw - 1500px)/1000)*25))));
+}
+.s-mw-50 {
+    margin: 0px 50px;
+}
+.s-mt-2 {
+    margin-top: 2px;
+}
+.mt-0 {
+    margin-top: 0px;
+}
+.mt-5 {
+    margin-top: min(10px, max(5px, calc(5px + calc(calc(calc(100vw - 1500px)/1000)*5))));
+}
+.mt-0-10 {
+    margin-top: min(10px, max(0px, calc(0px + calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+.mt-10-0 {
+    margin-top: min(10px, max(0px, calc(10px - calc(calc(calc(100vw - 1500px)/1000)*10))));
+}
+.mb-0 {
+    margin-bottom: 0px;
+}
+.mb-2_5 {
+    margin-bottom: min(5px, max(2.5px, calc(2.5px + calc(calc(calc(100vw - 1500px)/1000)*2.5))));
+}
+.pis-50 {
+    padding-inline-start: min(100px, max(50px, calc(50px + calc(calc(calc(100vw - 1500px)/1000)*50))));
+}
+.pis-120 {
+    padding-inline-start: min(240px, max(120px, calc(120px + calc(calc(calc(100vw - 1500px)/1000)*120))));
+}
+.pis-200 {
+    padding-inline-start: min(400px, max(200px, calc(200px + calc(calc(calc(100vw - 1500px)/1000)*200))));
+}
+.pis-280{
+    padding-inline-start: min(560px, max(280px, calc(280px + calc(calc(calc(100vw - 1500px)/1000)*280))));
+}
+.WC1 {
+    background-image: url('/images/WhiteChocolate1.png');
+    background-size: 100% 100%;
+}
+.WC2 {
+    background-image: url('/images/WhiteChocolate2.png');
+    background-size: 100% 100%;
+}
+.WC3 {
+    background-image: url('/images/WhiteChocolate3.png');
+    background-size: 100% 100%;
+}
+.DC1 {
+    background-image: url('/images/DarkChocolate1.png');
+    background-size: 100% 100%;
+}
+.DC2 {
+    background-image: url('/images/DarkChocolate2.png');
+    background-size: 100% 100%;
+}
+.DC3 {
+    background-image: url('/images/DarkChocolate3.png');
+    background-size: 100% 100%;
+}
+.modest {
+    width: fit-content;
+    display: inline-block;
+}
+.form-control {
+    padding: 0px min(24px, max(12px, calc(12px + calc(calc(calc(100vw - 1500px)/1000)*12))));
+}
+.nowrap {
+    white-space: nowrap;
+}
+.overflow {
+    overflow-x: auto;
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes fall {
+    from { top: -350px; }
+    to { top: 3000%; }
+}
+@keyframes whoopie {
+    0% { text-shadow: 0px 0px 0px #FFD700; }
+    5% { text-shadow: 0px 0px 1x #FFD700; }
+    10% { text-shadow: 0px 0px 2px #FFD700; }
+    15% { text-shadow: 0px 0px 3px #FFD700; }
+    20% { text-shadow: 0px 0px 4px #FFD700; }
+    25% { text-shadow: 0px 0px 5px #FFD700; }
+    30% { text-shadow: 0px 0px 6px #FFD700; }
+    35% { text-shadow: 0px 0px 7px #FFD700; }
+    40% { text-shadow: 0px 0px 8px #FFD700; }
+    45% { text-shadow: 0px 0px 9px #FFD700; }
+    50% { text-shadow: 0px 0px 10px #FFD700; }
+    55% { text-shadow: 0px 0px 12px #FFD700; }
+    60% { text-shadow: 0px 0px 14px #FFD700; }
+    65% { text-shadow: 0px 0px 16px #FFD700; }
+    70% { text-shadow: 0px 0px 18px #FFD700; }
+    75% { text-shadow: 0px 0px 20px #FFD700; }
+    80% { text-shadow: 0px 0px 25px #FFD700; }
+    85% { text-shadow: 0px 0px 30px #FFD700; }
+    90% { text-shadow: 0px 0px 35px #FFD700; }
+    95% { text-shadow: 0px 0px 40px #FFD700; }
+    100% { text-shadow: 0px 0px 50px #FFD700; }
+}
+@keyframes think {
+    0% { content: ""; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ""; }
+}
