@@ -23,6 +23,7 @@ Installation Instructions<br/>
 #########################
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Instructions (Centos)
 
 Step 1<br/>
@@ -86,3 +87,5 @@ Enjoy website!
 =======
 fart
 >>>>>>> b992582 (Creation)
+=======
+>>>>>>> 3424a10 (Creation)
