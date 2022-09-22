@@ -8,7 +8,7 @@ Code to host your own Chocolate DeFi System.
 License<br/>
 #######
 
-This code is free to use, modify, and redistribute for those who offer their creations free to all in kind for betterment of the Chocolate Coinucopia.
+This code is free to use, modify, and redistribute for those who offer their creations free to all in kind for the betterment of the Chocolate Coinucopia.
 
 
 ##########<br/>
