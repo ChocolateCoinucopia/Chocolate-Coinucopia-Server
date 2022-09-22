@@ -30,16 +30,25 @@ Login as root.
 Step 2<br/>
 Install server packages...<br/>
 COMMAND: yum update<br/>
-COMMAND: yum install httpd mod_ssl php
+COMMAND: yum install httpd mod_ssl php git
 
 Step 3<br/>
-Replace the /etc/httpd subdirectories with the completed httpd directories (owned by “root,” preserve the original symbolic links).
+Replace the /var/www/html directory with the completed /var/www/sites directory...<br/>
+COMMAND: cd /var/www && rmdir html<br/>
+COMMAND: git clone https://github.com/ChocolateCoinucopia/Chocolate-Coinucopia-Server.git<br/>
+COMMAND: mv Chocolate-Coinucopia-Server/sites .
 
 Step 4<br/>
+Replace the /etc/httpd subdirectories with the completed /etc/httpd subdirectories (owned by “root,” preserve the original symbolic links)…<br/>
+COMMAND: \cp -Rf Chocolate-Coinucopia-Server/httpd/* /etc/httpd<br/>
+COMMAND: mkdir /etc/httpd/sites-enabled<br/>
+COMMAND: rm -Rf Chocolate-Coinucopia-Server
+
+Step 5<br/>
 Create the error log directories...<br/>
 COMMAND: mkdir /var/log/httpd/pc /var/log/httpd/mobile
 
-Step 5<br/>
+Step 6<br/>
 Within the /etc/httpd/sites-available directory, update the “.conf” files with new SSL certificates…<br/>
 FILE: /etc/httpd/sites-available/generic.conf (lines 69 and 77)<br/>
 FILE: /etc/httpd/sites-available/pc.conf (lines 69 and 77)<br/>
@@ -48,14 +57,11 @@ FILE: /etc/httpd/sites-available/mobile.conf (lines 69 and 77)
 Or, to proceed with placeholder SSL certificates…<br/>
 COMMAND: mkdir /etc/ssl/private && openssl req -x509 -nodes -days 9999 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned-replace.key -out /etc/ssl/certs/selfsigned-replace.crt
 
-Step 6<br/>
+Step 7<br/>
 Create the symbolic links within the “sites-enabled” directory...<br/>
 COMMAND: ln -s /etc/httpd/sites-available/generic.conf /etc/httpd/sites-enabled/generic.conf<br/>
 COMMAND: ln -s /etc/httpd/sites-available/pc.conf /etc/httpd/sites-enabled/pc.conf<br/>
 COMMAND: ln -s /etc/httpd/sites-available/mobile.conf /etc/httpd/sites-enabled/mobile.conf
-
-Step 7<br/>
-Replace the /var/www/html directory with the completed /var/www/sites directory.
 
 Step 8<br/>
 Update the domain in the source code…<br/>
