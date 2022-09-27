@@ -923,6 +923,7 @@ class Calculator {
 
 	#generateTimeSeries() {
 
+		let s = 1;
 		let ts = this.#emptyTimeSeries();
 		let keys = this.#blockKeys();
 
@@ -930,9 +931,11 @@ class Calculator {
 
 			if(!this.#withinHorizonRequest(keys[i])) continue;
 
-			ts.Transfer.push(this.#blocks[keys[i]].Transfer);
-			ts.TransferFrom.push(this.#blocks[keys[i]].TransferFrom);
-			ts.Trade.push(this.#blocks[keys[i]].Trade);
+			s = this.#groupScale(keys[i]);
+
+			ts.Transfer.push(this.#blocks[keys[i]].Transfer/s);
+			ts.TransferFrom.push(this.#blocks[keys[i]].TransferFrom/s);
+			ts.Trade.push(this.#blocks[keys[i]].Trade/s);
 			ts.Supply.push(this.#blocks[keys[i]].Supply);
 		}
 
@@ -946,6 +949,11 @@ class Calculator {
 				'Trade': [],
 				'Supply': []
 			   };
+	}
+
+	#groupScale(timestamp) {
+
+		return moment(Math.min(moment().valueOf(), moment(timestamp.i()).add(1, this.#activeRequest.Group).valueOf())).diff(moment(timestamp.i()))/moment(timestamp.i()).add(1, this.#activeRequest.Group).diff(moment(timestamp.i()));
 	}
 
 	async #predictTimeSeries(ts, transaction) {
