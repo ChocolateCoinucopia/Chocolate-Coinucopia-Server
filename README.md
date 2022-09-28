@@ -39,8 +39,8 @@ COMMAND: git clone https://github.com/ChocolateCoinucopia/Chocolate-Coinucopia-S
 COMMAND: mv Chocolate-Coinucopia-Server/sites .
 
 Step 4<br/>
-Replace the /etc/httpd subdirectories with the completed /etc/httpd subdirectories (owned by “root,” preserve the original symbolic links)…<br/>
-COMMAND: \cp -Rf Chocolate-Coinucopia-Server/httpd/sites-available /etc/apache2<br/>
+Replace the /etc/apache2 subdirectories with the completed /etc/apache2 subdirectories (owned by “root,” preserve the original symbolic links)…<br/>
+COMMAND: \cp -Rf Chocolate-Coinucopia-Server/apache2/sites-available /etc/apache2<br/>
 COMMAND: a2enmod rewrite<br/>
 COMMAND: rm /etc/apache2/sites-enabled/*<br/>
 COMMAND: rm -Rf Chocolate-Coinucopia-Server
@@ -50,13 +50,13 @@ Create the error log directories...<br/>
 COMMAND: mkdir /var/log/apache2/pc /var/log/apache2/mobile
 
 Step 6<br/>
-Within the /etc/httpd/sites-available directory, update the “.conf” files with the new domain…<br/>
+Within the /etc/apache2/sites-available directory, update the “.conf” files with the new domain…<br/>
 FILE: /etc/apache2/sites-available/generic.conf (line 4)<br/>
 FILE: /etc/apache2/sites-available/pc.conf (line 4)<br/>
 FILE: /etc/apache2/sites-available/mobile.conf (line 4)
 
 Step 7<br/>
-Within the /etc/httpd/sites-available directory, update the “.conf” files with new SSL certificates…<br/>
+Within the /etc/apache2/sites-available directory, update the “.conf” files with new SSL certificates…<br/>
 FILE: /etc/apache2/sites-available/generic.conf (lines 69 and 77)<br/>
 FILE: /etc/apache2/sites-available/pc.conf (lines 69 and 77)<br/>
 FILE: /etc/apache2/sites-available/mobile.conf (lines 69 and 77)
