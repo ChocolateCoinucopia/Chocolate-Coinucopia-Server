@@ -906,7 +906,7 @@ class Calculator {
 
 	#groupRate(rate, timestamp) {
 
-		return rate*(moment(timestamp.i()).add(1, this.#activeRequest.Group).diff(moment(timestamp.i()))/moment(timestamp.i()).add(1, 'year').diff(moment(timestamp.i())))
+		return rate*(moment(timestamp.i()).add(1, this.#activeRequest.Group).diff(moment(timestamp.i()))/moment(timestamp.i()).add(1, 'year').diff(moment(timestamp.i())));
 	}
 
 	#groupRateGrowth(rate, growth, timestamp) {
@@ -921,7 +921,7 @@ class Calculator {
 
 	#generateTimeSeries() {
 
-		let s = 1;
+		let timestamp;
 		let ts = this.#emptyTimeSeries();
 		let keys = this.#blockKeys();
 
@@ -929,12 +929,21 @@ class Calculator {
 
 			if(!this.#withinHorizonRequest(keys[i])) continue;
 
-			s = this.#groupScale(keys[i]);
+			timestamp = keys[i];
 
-			ts.Transfer.push(this.#blocks[keys[i]].Transfer/s);
-			ts.TransferFrom.push(this.#blocks[keys[i]].TransferFrom/s);
-			ts.Trade.push(this.#blocks[keys[i]].Trade/s);
+			ts.Transfer.push(this.#blocks[keys[i]].Transfer);
+			ts.TransferFrom.push(this.#blocks[keys[i]].TransferFrom);
+			ts.Trade.push(this.#blocks[keys[i]].Trade);
 			ts.Supply.push(this.#blocks[keys[i]].Supply);
+		}
+
+		if(ts.length) {
+
+			ts.Transfer[ts.Transfer.length - 1] /= this.#groupScale(timestamp);
+			ts.TransferFrom[ts.TransferFrom.length - 1] /= this.#groupScale(timestamp);
+			ts.Trade[ts.Trade.length - 1] /= this.#groupScale(timestamp);
+
+			if(ts.length > 1) ts.Supply[ts.Supply.length - 1] = ts.Supply[ts.Supply.length - 2] + (ts.Supply[ts.Supply.length - 1] - ts.Supply[ts.Supply.length - 2])/this.#groupScale(timestamp);
 		}
 
 		return ts;
@@ -1034,7 +1043,7 @@ class Calculator {
 		let d = this.#blocks[this.#blockKeys().at(-1)][transaction] > 0;
 		let keys = this.#forwardKeys();
 
-		for(let i = 0, m = null, x = this.#blocks[this.#blockKeys().at(-1)][transaction]; i < ts.length && i < keys.length; x = m ? this.#forward[keys[i]][transaction] : (transaction == 'Supply' ? Math.max(x, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i]) : Math.max(0, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i])), i++) {
+		for(let i = 0, m = null, x = this.#blocks[this.#blockKeys().at(-1)][transaction]/this.#groupScale(this.#blockKeys().at(-1)); i < ts.length && i < keys.length; x = m ? this.#forward[keys[i]][transaction] : (transaction == 'Supply' ? Math.max(x, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i]) : Math.max(0, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i])), i++) {
 
 			m = document.getElementById('Valuation-Table-' + transaction + '-' + keys[i]).getAttribute('source') == 'model';
 
