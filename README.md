@@ -71,8 +71,8 @@ COMMAND: ln -s /etc/apache2/sites-available/mobile.conf /etc/apache2/sites-enabl
 
 Step 9<br/>
 Update the domain in the source code…<br/>
-FILE: /var/www/sites/pc/CHOC/includes/Domain.php (line 3)<br/>
-FILE: /var/www/sites/mobile/CHOC/includes/Domain.php (line 3)<br/>
+FILE: /var/www/sites/pc/CHOC/include/Domain.php (line 3)<br/>
+FILE: /var/www/sites/mobile/CHOC/include/Domain.php (line 3)<br/>
 FILE: /var/www/sites/pc/js/Background.js (line 379)<br/>
 FILE: /var/www/sites/mobile/js/Background.js (line 389)<br/>
 FILE: /var/www/sites/pc/js/Redirect.js (line 8)<br/>
@@ -139,8 +139,8 @@ COMMAND: ln -s /etc/httpd/sites-available/mobile.conf /etc/httpd/sites-enabled/m
 
 Step 9<br/>
 Update the domain in the source code…<br/>
-FILE: /var/www/sites/pc/CHOC/includes/Domain.php (line 3)<br/>
-FILE: /var/www/sites/mobile/CHOC/includes/Domain.php (line 3)<br/>
+FILE: /var/www/sites/pc/CHOC/include/Domain.php (line 3)<br/>
+FILE: /var/www/sites/mobile/CHOC/include/Domain.php (line 3)<br/>
 FILE: /var/www/sites/pc/js/Background.js (line 379)<br/>
 FILE: /var/www/sites/mobile/js/Background.js (line 389)<br/>
 FILE: /var/www/sites/pc/js/Redirect.js (line 8)<br/>
