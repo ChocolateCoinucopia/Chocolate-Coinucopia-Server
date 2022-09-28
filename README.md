@@ -51,15 +51,15 @@ COMMAND: mkdir /var/log/apache2/pc /var/log/apache2/mobile
 
 Step 6<br/>
 Within the /etc/httpd/sites-available directory, update the “.conf” files with the new domain…<br/>
-FILE: /etc/httpd/sites-available/generic.conf (line 4)<br/>
-FILE: /etc/httpd/sites-available/pc.conf (line 4)<br/>
-FILE: /etc/httpd/sites-available/mobile.conf (line 4)
+FILE: /etc/apache2/sites-available/generic.conf (line 4)<br/>
+FILE: /etc/apache2/sites-available/pc.conf (line 4)<br/>
+FILE: /etc/apache2/sites-available/mobile.conf (line 4)
 
 Step 7<br/>
 Within the /etc/httpd/sites-available directory, update the “.conf” files with new SSL certificates…<br/>
-FILE: /etc/httpd/sites-available/generic.conf (lines 69 and 77)<br/>
-FILE: /etc/httpd/sites-available/pc.conf (lines 69 and 77)<br/>
-FILE: /etc/httpd/sites-available/mobile.conf (lines 69 and 77)
+FILE: /etc/apache2/sites-available/generic.conf (lines 69 and 77)<br/>
+FILE: /etc/apache2/sites-available/pc.conf (lines 69 and 77)<br/>
+FILE: /etc/apache2/sites-available/mobile.conf (lines 69 and 77)
 
 Or, to proceed with the placeholder (“snakeoil”) SSL certificates… 
 
