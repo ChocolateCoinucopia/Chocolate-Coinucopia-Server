@@ -47,7 +47,8 @@ COMMAND: rm -Rf Chocolate-Coinucopia-Server
 
 Step 5<br/>
 Create the error log directories...<br/>
-COMMAND: mkdir /var/log/apache2/pc /var/log/apache2/mobile
+COMMAND: mkdir /var/log/apache2/pc /var/log/apache2/mobile<br/>
+COMMAND: ln -s ../../var/log/apache2 /etc/apache2/logs
 
 Step 6<br/>
 Within the /etc/apache2/sites-available directory, update the “.conf” files with the new domain…<br/>
