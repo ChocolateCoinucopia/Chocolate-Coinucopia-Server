@@ -1045,7 +1045,7 @@ class Calculator {
 		let d = this.#blocks[this.#blockKeys().at(-1)][transaction] > 0;
 		let keys = this.#forwardKeys();
 
-		for(let i = 0, m = null, x = this.#blocks[this.#blockKeys().at(-1)][transaction]/this.#groupScale(this.#blockKeys().at(-1)); i < ts.length && i < keys.length; x = m ? this.#forward[keys[i]][transaction] : (transaction == 'Supply' ? Math.max(x, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i]) : Math.max(0, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i])), i++) {
+		for(let i = 0, m = null, x = transaction == 'Supply' ? (this.#blockKeys().length > 1 ? this.#blocks[this.#blockKeys().at(-2)][transaction] + (this.#blocks[this.#blockKeys().at(-1)][transaction] - this.#blocks[this.#blockKeys().at(-2)][transaction])/this.#groupScale(this.#blockKeys().at(-1)) : this.#blocks[this.#blockKeys().at(-1)][transaction]) : this.#blocks[this.#blockKeys().at(-1)][transaction]/this.#groupScale(this.#blockKeys().at(-1)); i < ts.length && i < keys.length; x = m ? this.#forward[keys[i]][transaction] : (transaction == 'Supply' ? Math.max(x, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i]) : Math.max(0, d ? x*(ts[i] < 0 ? 1/(1 + -ts[i]) : 1 + ts[i]) : ts[i])), i++) {
 
 			m = document.getElementById('Valuation-Table-' + transaction + '-' + keys[i]).getAttribute('source') == 'model';
 
