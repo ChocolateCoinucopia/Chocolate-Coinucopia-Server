@@ -30,6 +30,7 @@ html;
             require_once '/var/www/sites/mobile/CHOC/include/Valuation.php';
             require_once '/var/www/sites/mobile/CHOC/include/ERC20.php';
             require_once '/var/www/sites/mobile/CHOC/include/DEX.php';
+            require_once '/var/www/sites/mobile/CHOC/include/Server.php';
 echo <<< html
         </div>
       </div>
