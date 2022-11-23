@@ -32,8 +32,8 @@ echo <<< valuation
                         <label class="f20">Group&nbsp;By:&nbsp;</label>
                         <select id="Valuation-Panel-Group" class="form-control input-lg modest numeric" name="group">
                             <option value="Day">Day</option>
-                            <option value="Week" selected>Week</option>
-                            <option value="Month">Month</option>
+                            <option value="Week">Week</option>
+                            <option value="Month" selected>Month</option>
                             <option value="Quarter">Quarter</option>
                             <option value="Year">Year</option>
                         </select>
@@ -46,7 +46,7 @@ echo <<< valuation
                         <label class="f20">From:&nbsp;</label>
                         <input id="Valuation-Panel-From" class="form-control input-lg flex numeric" type="date" name="from" min="2022-03-01" max="
 valuation;
-                            echo date('Y-m-d').'" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/YYYY" value="'.date('Y-m-d', strtotime('-3 months')).'">';
+                            echo date('Y-m-d').'" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/YYYY" value="'.date('Y-m-d', strtotime('-6 months')).'">';
 echo <<< valuation
                     </span>
                 </div>
@@ -64,7 +64,7 @@ echo <<< valuation
                 <div class="left">
                     <span>
                         <label class="pl-59_5 f20">Predict:&nbsp;</label>
-                        <input id="Valuation-Panel-Predict" class="form-control input-lg w-w-90 right numeric flex" type="number" name="predict" min="1" pattern="[0-9]+([\.,][0-9]+)?" placeholder="5" value="5">
+                        <input id="Valuation-Panel-Predict" class="form-control input-lg w-w-90 right numeric flex" type="number" name="predict" min="1" pattern="[0-9]+([\.,][0-9]+)?" placeholder="5" value="6">
                     </span>
                 </div>
                  <div class="left">
