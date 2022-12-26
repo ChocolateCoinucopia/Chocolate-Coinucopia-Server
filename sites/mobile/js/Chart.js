@@ -242,14 +242,14 @@ class Chart {
     }
 
     this.chart['Limits'] = {L: {
-                                    Min: !isNaN(minL) && isFinite(minL) ? Math.max(minL - 0.05*(maxL -  minL), 0) : null, 
-                                    Max: !isNaN(maxL) && isFinite(maxL) ? maxL + 0.05*(maxL -  minL) : null
-                                  }, 
-                                  R: { 
-                                    Min: !isNaN(minR) && isFinite(minR) ? Math.max(minR - 0.05*(maxR - minR), 0) : null, 
-                                    Max: !isNaN(maxR) && isFinite(maxR) ? maxR + 0.05*(maxR - minR) : null
-                                  }
-                                 };
+                              Min: !isNaN(minL) && isFinite(minL) ? Math.max(maxL == minL ? 0.95*minL : minL - 0.05*(maxL -  minL), 0) : null, 
+                              Max: !isNaN(maxL) && isFinite(maxL) ? (maxL == minL ? 1.05*maxL : maxL + 0.05*(maxL -  minL)) : null
+                            }, 
+                            R: { 
+                              Min: !isNaN(minR) && isFinite(minR) ? Math.max(maxR == minR ? 0.95*minR : minR - 0.05*(maxR - minR), 0) : null, 
+                              Max: !isNaN(maxR) && isFinite(maxR) ? (maxR == minR ? 1.05*maxR : maxR + 0.05*(maxR - minR)) : null
+                            }
+                           };
 
     return this.chart['Limits'];
   }
@@ -526,8 +526,8 @@ class Chart {
     secondary.Coins[0].Data.forEach((c) => max = Math.max(max, c.y));
 
     return {L: {
-              Min: !isNaN(min) && isFinite(min) ? Math.max(min - 0.05*(max - min), 0) : null,
-              Max: !isNaN(max) && isFinite(max) ? max + 0.05*(max - min) : null
+              Min: !isNaN(min) && isFinite(min) ? Math.max(max == min ? 0.95*min : min - 0.05*(max -  min), 0) : null, 
+              Max: !isNaN(max) && isFinite(max) ? (max == min ? 1.05*max : max + 0.05*(max -  min)) : null
             },
             R: null
            };
