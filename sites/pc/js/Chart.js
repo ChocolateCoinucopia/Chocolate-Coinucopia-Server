@@ -517,8 +517,8 @@ class Chart {
     secondary.Coins[0].Data.forEach((c) => max = Math.max(max, c.y));
 
     return {L: {
-              Min: !isNaN(min) && isFinite(min) ? Math.max(min - 0.05*(max - min), 0) : null,
-              Max: !isNaN(max) && isFinite(max) ? max + 0.05*(max - min) : null
+              Min: !isNaN(min) && isFinite(min) ? Math.max(max == min ? 0.95*min : min - 0.05*(max -  min), 0) : null, 
+              Max: !isNaN(max) && isFinite(max) ? (max == min ? 1.05*max : max + 0.05*(max -  min)) : null
             },
             R: null
            };
